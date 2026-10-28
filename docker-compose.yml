@@ -1,0 +1,41 @@
+services:
+  mediamtx:
+    image: bluenviron/mediamtx:latest
+    container_name: rtsp-servidor
+    ports:
+      - "8554:8554"
+    networks:
+      - rtsp-net
+
+  publicador:
+    image: linuxserver/ffmpeg:latest
+    container_name: rtsp-publicador
+    depends_on:
+      - mediamtx
+    restart: on-failure
+    command: >
+      -re -f lavfi -i testsrc=size=640x480:rate=25
+      -f lavfi -i sine=frequency=440
+      -c:v libx264 -preset ultrafast -tune zerolatency
+      -c:a aac
+      -f rtsp rtsp://mediamtx:8554/stream
+    networks:
+      - rtsp-net
+
+  lector:
+    image: linuxserver/ffmpeg:latest
+    container_name: rtsp-lector
+    depends_on:
+      - publicador
+    restart: on-failure
+    command: >
+      -i rtsp://mediamtx:8554/stream
+      -f null -
+    networks:
+      - rtsp-net
+
+networks:
+  rtsp-net:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: br-rtsp
