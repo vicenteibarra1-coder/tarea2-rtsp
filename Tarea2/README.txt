@@ -80,4 +80,4 @@ Abrir el archivo `.pcap` (Archivo → Abrir) y usar estos filtros:
 | `rtp` | Paquetes de video (PT 96, H.264) y audio (PT 97, AAC) |
 
 link_video_Demostracion(solo con cuenta UDP): (https://drive.google.com/file/d/1ic0UA1sblKpRajPfotg30tdmKNgkwxKQ/view)
-link_video_Demostracion(enlace publico): (link_video_Demostracion(solo con cuenta UDP): (https://drive.google.com/file/d/1ic0UA1sblKpRajPfotg30tdmKNgkwxKQ/view))
+link_video_Demostracion(enlace publico): (https://drive.google.com/file/d/1ic0UA1sblKpRajPfotg30tdmKNgkwxKQ/view)
