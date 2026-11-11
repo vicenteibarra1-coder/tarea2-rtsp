@@ -4,10 +4,6 @@ Proyecto del curso Taller de Redes (UDP). Se despliega un servidor RTSP (MediaMT
 
 Integrantes: Diego Ayala, Vicente Ibarra
 
-
-
-
-
 ## Requisitos
 
 - Docker y Docker Compose
@@ -16,9 +12,15 @@ Integrantes: Diego Ayala, Vicente Ibarra
 
 ## Levantar el servicio
 
+Las imágenes del servidor y del cliente se construyen a partir de los Dockerfiles del repositorio:
+
+- `servidor/Dockerfile`: Ubuntu 24.04 + MediaMTX v1.9.3 descargado desde su repositorio oficial.
+- `cliente/Dockerfile`: Ubuntu 24.04 + FFmpeg instalado con `apt-get`.
+
 ```bash
 git clone https://github.com/vicenteibarra1-coder/tarea2-rtsp.git
 cd tarea2-rtsp
+docker compose build
 docker compose up -d
 docker ps
 docker compose down
