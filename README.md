@@ -18,7 +18,7 @@ Integrantes: Diego Ayala, Vicente Ibarra
 
 ```bash
 git clone https://github.com/vicenteibarra1-coder/tarea2-rtsp.git
-cd tarea2-rtsp/Tarea2
+cd tarea2-rtsp
 docker compose up -d
 docker ps
 docker compose down
