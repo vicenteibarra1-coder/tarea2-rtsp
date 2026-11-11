@@ -1,6 +1,6 @@
 services:
   mediamtx:
-    image: bluenviron/mediamtx:latest
+    build: ./servidor
     container_name: rtsp-servidor
     ports:
       - "8554:8554"
@@ -8,7 +8,7 @@ services:
       - rtsp-net
 
   publicador:
-    image: linuxserver/ffmpeg:latest
+    build: ./cliente
     container_name: rtsp-publicador
     depends_on:
       - mediamtx
@@ -23,7 +23,7 @@ services:
       - rtsp-net
 
   lector:
-    image: linuxserver/ffmpeg:latest
+    build: ./cliente
     container_name: rtsp-lector
     depends_on:
       - publicador
