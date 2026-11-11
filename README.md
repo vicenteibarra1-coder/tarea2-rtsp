@@ -1,3 +1,13 @@
+# Tarea 2 – Análisis de tráfico RTSP
+
+Proyecto del curso Taller de Redes (UDP). Se despliega un servidor RTSP (MediaMTX) y dos clientes FFmpeg (publicador y lector) en contenedores Docker, y se captura y analiza el tráfico generado con tcpdump y Wireshark, comparando el transporte por UDP y por TCP intercalado.
+
+Integrantes: Diego Ayala, Vicente Ibarra
+
+
+
+
+
 ## Requisitos
 
 - Docker y Docker Compose
@@ -8,7 +18,7 @@
 
 ```bash
 git clone https://github.com/vicenteibarra1-coder/tarea2-rtsp.git
-cd tarea2-rtsp
+cd tarea2-rtsp/Tarea2
 docker compose up -d
 docker ps
 docker compose down
